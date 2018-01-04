@@ -1,5 +1,8 @@
 # MaskRCNN_Practise
+<<<<<<< HEAD
 
+=======
+>>>>>>> 389ee884c9155159dd3ac6943ef9972162776200
 Mask RCNN in TensorFlow
 
 This repo attempts to reproduce this amazing work by Kaiming He et al. : 
