@@ -34,7 +34,7 @@ with tf.Graph().as_default():
       
       ## data
       image, ih, iw, gt_boxes, gt_masks, num_instances, img_id = \
-        coco.read('/home/wanghx/deepleraning/FastMaskRCNN/data/coco/records/coco_train2014_00000-of-00033.tfrecord')
+        coco.read('/home/fortis/pycharmProjects/MaskRCNN_Practise/data/coco/records/coco_train2014_00000-of-00033.tfrecord')
       with tf.control_dependencies([image, gt_boxes, gt_masks]):
         image, gt_boxes, gt_masks = coco_preprocess.preprocess_image(image, gt_boxes, gt_masks, is_training=True)
       

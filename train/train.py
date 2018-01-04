@@ -29,6 +29,11 @@ from libs.datasets import download_and_convert_coco
 #from libs.datasets.download_and_convert_coco import _cat_id_to_cls_name
 from libs.visualization.pil_utils import cat_id_to_cls_name, draw_img, draw_bbox
 
+# These two lines are here to avoid the error "could not create cudnn handle: CUDNN_STATUS_INTERNAL_ERROR"
+from tensorflow.python.client import device_lib
+name = device_lib.list_local_devices()
+
+
 FLAGS = tf.app.flags.FLAGS
 resnet50 = resnet_v1.resnet_v1_50
 
@@ -146,8 +151,8 @@ def restore(sess):
             FLAGS.checkpoint_include_scopes='resnet_v1_50'
 
         vars_to_restore = get_var_list_to_restore()
-        for var in vars_to_restore:
-            print ('restoring ', var.name)
+        # for var in vars_to_restore:
+        #     print ('restoring ', var.name)
       
         try:
            restorer = tf.train.Saver(vars_to_restore)

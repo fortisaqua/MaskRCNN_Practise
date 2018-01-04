@@ -8,11 +8,11 @@ import tensorflow as tf
 #                  restore
 ##########################
 tf.app.flags.DEFINE_string(
-    'train_dir', '/home/wanghx/deepleraning/FastMaskRCNN/output/mask_rcnn/',
+    'train_dir', '/home/fortis/pycharmProjects/MaskRCNN_Practise/output/mask_rcnn/',
     'Directory where checkpoints and event logs are written to.')
 
 tf.app.flags.DEFINE_string(
-    'pretrained_model', '/home/wanghx/deepleraning/FastMaskRCNN/data/pretrained_models/resnet_v1_50.ckpt',
+    'pretrained_model', '/home/fortis/pycharmProjects/MaskRCNN_Practise/data/pretrained_models/resnet_v1_50.ckpt',
     'Path to pretrained model')
 
 ##########################
@@ -67,7 +67,7 @@ tf.app.flags.DEFINE_integer(
     'The frequency with which the model is saved, in seconds.')
 
 tf.app.flags.DEFINE_integer(
-    'max_iters', 2500,
+    'max_iters', 250000,
     'max iterations')
 
 ######################
@@ -220,7 +220,7 @@ tf.app.flags.DEFINE_boolean(
     'When restoring a checkpoint would ignore missing variables.')
 
 tf.app.flags.DEFINE_boolean(
-    'restore_previous_if_exists', True,
+    'restore_previous_if_exists', False,
     'When restoring a checkpoint would ignore missing variables.')
 
 #######################
